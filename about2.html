@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="ABOUT.css">
+    <title>About The Last of Us</title>
+</head>
+<body>
+    <div class="content" id="about2-content">
+        
+        <div class="about">
+            <div class="image-container img0">
+                <img src="image2-1.jpg" alt="Image 0">
+            </div>
+            <div class="image-container img1">
+                <img src="image2-2.jpg" alt="Image 1">
+            </div>
+            <div class="image-container img2">
+                <img src="image2-3.jpg" alt="Image 2">
+            </div>
+            <div class="image-container img3">
+                <img src="image2-4.jpg" alt="Image 3">
+            </div>
+            <div class="image-container img4">
+                <img src="image2-5.jpg" alt="Image 4">
+            </div>
+            <div class="image-container img5">
+                <img src="image2-6.jpg" alt="Image 5">
+            </div>
+        </div>
+    </div>
+</body>
+
+	<script>
+	const API_KEY = 'AIzaSyBGuNILP7_ePJw3PJxGtU11A3lDzwIMd28';
+    const VIDEO_ID = 'vhII1qlcZ4E';
+    const URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${VIDEO_ID}&key=${API_KEY}`;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const contentDiv = document.getElementById('about2-content');
+
+        fetch(URL)
+            .then(response => response.json())
+            .then(data => {
+                if (data.items && data.items.length > 0) {
+                    const videoData = data.items[0].snippet;
+                    const videoTitle = videoData.title;
+                    const videoDescription = videoData.description;
+
+                    contentDiv.innerHTML = `
+                        <h2>${videoTitle}</h2>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/${VIDEO_ID}" 
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                            gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>${videoDescription}</p>
+						
+                    ` + contentDiv.innerHTML;  // Prepend the video and description
+                } else {
+                    contentDiv.innerHTML = `<p>No video data found.</p>` + contentDiv.innerHTML;
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching YouTube data:', error);
+                contentDiv.innerHTML = `<p>Unable to load video data. Please try again later.</p>` + contentDiv.innerHTML;
+            });
+    });
+</script>
+</html>

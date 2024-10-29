@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>SHOP</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+		body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+	text-align: center;
+	background: url(TLOUbackground.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+body h1{
+	margin-top: 20px;
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 300;
+    font-size: 400%;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.product {
+    border: 1px solid #ccc;
+	background-color:#fff;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 25%;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    max-width: 100%;
+    height: 250px;
+	width: 250px;
+}
+
+.price {
+	margin-left:1px;
+}
+</style>
+</head>
+<body background="TLOUbackground.jpg">
+	<h1>THE LAST OF US STORE</h1>
+		<section class="products">
+        <div class="product">
+            <img src="TLOU1.jpg" alt="Product 1">
+            <h3>The Last of Us Part I</h3>
+			<div class="quantity">
+				<button onclick="decreaseValue('quantity1', 'price1', 50)">-</button>
+				<input type="number" id="quantity1" value="1" min="1" onchange="updatePrice('quantity1', 'price1', 50)">
+				<button onclick="increaseValue('quantity1', 'price1', 50)">+</button>
+        <a href="checkout.html">
+    <button onclick="addToCart('The Last of Us Part I', 'price1', 'quantity1')">Add to Cart</button>
+		</a>
+		
+			</div>
+			<span class="price">Price: $<span id="price1">50</span></span>
+        </div>
+        <div class="product">
+            <img src="TLOU2.jpg" alt="Product 2">
+            <h3>The Last of Us Part II</h3>
+			<div class="quantity">
+				<button onclick="decreaseValue('quantity2', 'price2', 50)">-</button>
+				<input type="number" id="quantity2" value="1" min="1" onchange="updatePrice('quantity2', 'price2', 50)">
+				<button onclick="increaseValue('quantity2', 'price2', 50)">+</button>
+        <a href="checkout.html">
+    <button onclick="addToCart('The Last of Us Part 2', 'price2', 'quantity2')">Add to Cart</button>
+		</a>
+			</div>
+				<span class="price">Price: $<span id="price2">50</span></span>
+        </div>
+	<script>
+	function increaseValue (quantityId, priceId, basePrice){
+		var value = parseInt(document.getElementById(quantityId).value, 10);
+		value = isNaN(value) ? 1 : value;
+		value++;
+		document.getElementById(quantityId).value = value;
+		updatePrice(quantityId, priceId, basePrice);
+	}
+
+	function decreaseValue(quantityId, priceId, basePrice) { 
+		var value = parseInt(document.getElementById(quantityId).value, 10);
+		value = isNaN(value) ? 1 : value;
+		if (value > 1) {
+			value--; 
+		}
+		document.getElementById(quantityId).value = value;
+		updatePrice(quantityId, priceId, basePrice);
+	}
+	
+	function updatePrice(quantityId, priceId, basePrice) {
+		var quantity = parseInt(document.getElementById(quantityId).value, 10);
+		quantity = isNaN(quantity) ? 1 : quantity;
+		var totalPrice = quantity * basePrice;
+		document.getElementById(priceId).innerText = totalPrice;
+	}
+	
+	function addToCart(productName, priceId, quantityId) {
+    const price = parseInt(document.getElementById(priceId).innerText, 10);
+    const quantity = parseInt(document.getElementById(quantityId).value, 10);
+
+    const cartItem = {
+        productName: productName,
+        price: price,
+        quantity: quantity
+    };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItemIndex = cart.findIndex(item => item.productName === productName);
+
+    if (existingItemIndex >= 0) {
+        cart[existingItemIndex].quantity += quantity;
+        cart[existingItemIndex].price += price; 
+    } else {
+        cart.push(cartItem);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${productName} has been added to the cart!`);
+}
+	</script>
+</body>
+</html>

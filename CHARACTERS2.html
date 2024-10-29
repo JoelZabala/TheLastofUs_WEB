@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Of Us 2 - Characters</title>
+<style>
+	body {
+    font-family: Arial, sans-serif;
+    background-color: #696969; /* dark gray */
+    padding: 5px;             /* padding ng bawat images and text */
+}
+/* layout ng header image */
+.header-image {
+    display: flex;             /* maayos na positioning ng image */
+    justify-content: center;   /* ginagawang gitna ang image */
+	margin-top: 0px;
+    margin-bottom: 5px;       /* space sa baba ng image */
+}
+
+.header-image img { 
+    max-width: 100%;           /* max width ng header image */       
+    height: auto;              
+}
+
+/* layout ng infected sa html */
+.characters2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* 3 columns */
+    grid-template-rows: 90 90;       /* adjust ng row height dynamically */
+    gap: 10px;                           /* gap ng bawat images */
+    margin-top: 5px;                    /* space sa taas ng mga images */
+}
+
+/* positioning the images */
+.ellie {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.joel {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.tommy {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.dina {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.jesse {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.abby {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+/* styling ng image container sa html*/
+.image-container {
+    text-align: center;
+    background-color: #808080; /* light gray */
+    border: 1px solid #000000; /* black */
+    padding: 3px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* laki, haba, border sa image container */
+.image-container img {
+    width: 85%;
+    max-width: 120px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* hover ng mga image */
+.image-container img:hover {
+    transform: scale(1.7);  /* pinapalaki ang hover*/
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); /* shadow ng hover */
+    transition: transform 0.3s ease, box-shadow 1.5s ease;  /* transition ng hover */
+}
+
+/* increase ng mga specific na image */
+/* size ng image 1 */
+.ellie img {
+    max-width: 190px; /* pangpalaki ng image */
+}
+
+/* size ng image 2 */
+.joel img {
+    max-width: 195px;
+}
+
+/* size ng image 3 */
+.tommy img {
+    max-width: 195px;
+}
+
+/* size ng image 4 */
+.dina img {
+    max-width: 210px;
+}
+
+/* size ng image 5 */
+.jesse img {
+    max-width: 210px;
+}
+
+/* size ng image 6 */
+.abby img {
+    max-width: 195px;
+}
+
+/* style ng image name and image description */
+.image-name {
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.image-description {
+    font-size: 16px;
+    color: #000000; /* black */
+    margin-top: 0px;
+	margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+    <div class="header-image">
+        <img src="TLOU2.png" alt="TLOU" style="width: 50%; height: 50%; max-width: 600px;">
+    </div>
+	
+    <div class="characters2">
+        <div class="image-container ellie">
+            <img src="ellie2.png" alt="Image 1">
+            <p class="image-name">Ellie Williams</p>
+            <p class="image-description">A 19-year-old survivor driven by revenge, Ellie is tough and emotionally conflicted.</p>
+        </div>
+        <div class="image-container joel">
+            <img src="joel2.png" alt="Image 2">
+            <p class="image-name">Joel Miller</p>
+            <p class="image-description">Ellie’s father figure whose past actions spark the events of the game.</p>
+        </div>
+        <div class="image-container tommy">
+            <img src="tommy2.png" alt="Image 3">
+            <p class="image-name">Tommy Miller</p>
+            <p class="image-description">Joel’s brother, on his own revenge quest, mirroring Ellie’s struggles.</p>
+        </div>
+        <div class="image-container dina">
+            <img src="dina2.png" alt="Image 4">
+            <p class="image-name">Dina</p>
+            <p class="image-description">Ellie’s love interest, brave and supportive on her journey.</p>
+        </div>
+        <div class="image-container jesse">
+            <img src="jesse2.png" alt="Image 5">
+            <p class="image-name">Jesse</p>
+            <p class="image-description">A loyal friend to Ellie and Dina, calm and dependable.</p>
+        </div>
+        <div class="image-container abby">
+            <img src="abby2.png" alt="Image 6">
+            <p class="image-name">Abby Anderson</p>
+            <p class="image-description">A WLF soldier seeking revenge for her father’s death, Abby crosses paths with Ellie.</p>
+        </div>
+    </div>
+</body>
+</html>

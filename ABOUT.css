@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #696969; /* dark gray */
+    padding: 20px;             /* padding ng bawat images and text */
+	margin: 0;
+	text-align: center;
+}
+
+#about-content p {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+	text-align: justify;
+	font-family: Fantasy, sans-serif;
+	
+}
+
+#about2-content p {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+	text-align: justify;
+	font-family: Fantasy, sans-serif;
+	
+}
+
+/* layout ng header image */
+.header-image {
+    display: flex;             /* maayos na positioning ng image */
+    justify-content: center;   /* ginagawang gitna ang image */
+	margin-bottom: 20px;       /* space sa baba ng image */
+}
+
+/* layout ng infected sa html */
+.about {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);  /* 3 columns */
+    grid-template-rows: auto auto;       /* adjust ng row height dynamically */
+    gap: 10px;                           /* gap ng bawat images */
+    margin-top: 15px;                 /* space sa taas ng mga images */
+}
+
+.img0 {
+	grid-column: 1;
+}
+/* positioning the images */
+.img1 {
+    grid-column: 2;
+}
+
+.img2 {
+    grid-column: 3;
+}
+
+.img3 {
+    grid-column: 4;
+}
+
+.img4 {
+    grid-column: 5;
+}
+
+.img5 {
+    grid-column: 6;
+}
+
+.img6 {
+    grid-column: 7;
+}
+
+/* laki, haba, border sa image container */
+.image-container img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;\
+}
+
+/* hover ng mga image */
+.image-container img:hover {
+    transform: scale(1.5);  /* pinapalaki ang hover*/
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15); /* shadow ng hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* transition ng hover */
+}
+
+/* increase ng mga specific na image */
+.img0 img,
+/* size ng image 1 */
+.img1 img,
+/* size ng image 2 */
+.img2 img,
+/* size ng image 3 */
+.img3 img,
+/* size ng image 4 */
+.img4 img,
+/* size ng image 5 */
+.img5 img ,
+/* size ng image 6 */
+.img6 img {
+    max-width: 200px;
+	box-shadow: 5px 8px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.centered-paragraph {
+    display: flex;
+    justify-content: center;          /* Centers the paragraph horizontally */
+    align-items: center;
+    text-align: justify;              /* Justifies the text */
+    color: white;                     /* White text color */
+    padding: 0px 15px;                    /* Adds padding inside the border */
+    margin: 20px auto;                /* Centers the div and adds margin */
+    max-width: 1400px;                 /* Limits the width of the paragraph */
+    background-color: rgba(0, 0, 0, 0.2);  /* Semi-transparent background */
+    border-radius: 10px;              /* Rounds the corners */
+}
+	
+	

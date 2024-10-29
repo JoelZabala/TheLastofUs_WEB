@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index.css">
+    <title>Sidebar with Iframe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#" class="submenu-toggle">The Last of Us 1 <span class="expand-arrow"></span></a>
+                    <ul class="submenu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="CHARACTERS1.html">Characters</a></li>
+                        <li><a href="TLOUINFECTED.html">Infected</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="submenu-toggle">The Last of Us 2 <span class="expand-arrow"></span></a>
+                    <ul class="submenu">
+						<li><a href="about2.html">About</a></li>
+                        <li><a href="CHARACTERS2.html">Characters</a></li>
+                        <li><a href="TLOUINFECTED.html">Infected</a></li>
+                    </ul>
+                </li>
+                <li><a href="shop.html">Store</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </div>
+
+        <div class="banner" id="homepage">
+            <video autoplay muted loop class="home">
+                <source src="homepage.mp4" type="video/mp4">
+            </video>
+
+            <div class="content">
+                <div class="title">
+                    <img src="TLOUhomepage.png" alt="TLOUhomepage" style="width: 100%; max-width: 450px;">
+                </div>
+                <div class="description">
+                    The Last of Us Series: Created by Naughty Dog, these games follow Joel and Ellie navigating a world devastated by a fungal outbreak.
+                    In the sequel, Ellie’s quest for revenge pushes her into a darker path, questioning her own humanity.
+                    The series is celebrated for its gripping story and intense gameplay.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="toggle-btn" id="toggleBtn">Toggle Sidebar</button>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+        toggleBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('hidden'); 
+        });
+
+        submenuToggles.forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                const submenu = this.nextElementSibling;
+                submenu.classList.toggle('expanded'); 
+                this.classList.toggle('expanded'); 
+            });
+        });
+    });
+</script>
+</html>

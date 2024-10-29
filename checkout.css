@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e0e0e0; /* Light grey background */
+    color: #333; /* Dark grey text */
+    margin: 0;
+    padding: 20px; /* Added padding to body */
+    background-image: url('path/to/your/background-pattern.png'); /* Optional background image */
+    background-size: cover; /* Cover the entire area */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: #212121; /* Darker grey for header */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+#cart-items {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #ffffff; /* White background for the cart */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Card layout for cart items */
+#cart-items div {
+    background-color: #f9f9f9; /* Light grey card background */
+    padding: 15px;
+    margin-bottom: 10px; /* Space between items */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for card effect */
+    display: flex;
+    justify-content: space-between;
+}
+
+#cart-items div:last-child {
+    border-bottom: none;
+}
+
+#cart-items p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Total Price Styles */
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 10px;
+    color: #424242; /* Grey for the total price header */
+}
+
+/* Button Styles */
+button {
+    display: block;
+    width: 200px;
+    margin: 25px auto;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    color: #ffffff; /* White text */
+    background-color: #333; /* Dark grey background for button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #444; /* Slightly lighter grey on hover */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Centering PayPal Button */
+#paypal-button-wrapper {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    margin-top: 25px;
+    padding: 25px;
+}
+
+/* Additional styles if needed for fine-tuning */
+#paypal-button-container {
+    width: auto; /* Make sure the container adjusts to content */
+}
