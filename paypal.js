@@ -29,17 +29,13 @@
 function removeFromCart(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Remove item at the specified index
     cart.splice(index, 1);
 
-    // Save the updated cart to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Reload the cart display
     loadCart();
 }
 
-// Load cart when the page loads
 window.onload = function () {
     const totalPrice = loadCart();
 
@@ -58,7 +54,6 @@ window.onload = function () {
         onApprove: function (data, actions) {
             return actions.order.capture().then(function (details) {
                 localStorage.removeItem('cart');
-                window.location.href = "confirmation.html";
             });
         },
         onError: function (err) {
